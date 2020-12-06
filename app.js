@@ -24,7 +24,7 @@ app.use("/orders", ordersRoute);
 
 //connet to mongoDb
 mongoose.connect(
-  `  mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.d4pds.mongodb.net/${DB_COLLECTION}?retryWrites=true&w=majority`,
+  `  mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.d4pds.mongodb.net/${process.env.DB_COLLECTION}?retryWrites=true&w=majority`,
   { useUnifiedTopology: true, useNewUrlParser: true },
   () => console.log("db connected")
 );
