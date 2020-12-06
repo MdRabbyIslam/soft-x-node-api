@@ -24,8 +24,8 @@ app.use("/orders", ordersRoute);
 
 //connet to mongoDb
 mongoose.connect(
-`  mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.d4pds.mongodb.net/${DB_COLLECTION}?retryWrites=true&w=majority,
-`  { useUnifiedTopology: true, useNewUrlParser: true },
+  `  mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.d4pds.mongodb.net/${DB_COLLECTION}?retryWrites=true&w=majority`,
+  { useUnifiedTopology: true, useNewUrlParser: true },
   () => console.log("db connected")
 );
 
@@ -37,7 +37,7 @@ app.use((req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.json({
+  res.status(200).json({
     message: "we are at home page",
   });
 });
